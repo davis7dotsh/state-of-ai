@@ -11,6 +11,7 @@ models:
     name: GPT 5.4
     logoId: gpt-5-4
     tags: [reasoning, flagship]
+    recommended: true
     description: |
       Top-tier general reasoning and long-context work; the default when quality matters more than cost.
 
@@ -18,6 +19,7 @@ models:
     name: Opus 4.6
     logoId: opus-4-6
     tags: [analysis, flagship]
+    recommended: true
     description: |
       Anthropic's heaviest model for deep analysis, careful drafting, and nuanced instruction following.
 
@@ -54,6 +56,7 @@ harnesses:
     name: Cursor
     logoId: cursor
     tags: [editor, coding]
+    recommended: true
     description: |
       Editor-native AI with multi-file edits, strong model choice, and a polished daily-dev experience.
 
@@ -61,6 +64,7 @@ harnesses:
     name: Claude Code
     logoId: claude-code
     tags: [agentic, refactoring]
+    recommended: true
     description: |
       Anthropic's agentic coding tool with deep context and careful refactors in large codebases.
 
@@ -97,6 +101,7 @@ subs:
     name: Claude Max
     logoId: claude-max
     tags: [premium, throughput]
+    recommended: true
     description: |
       Anthropic's highest consumer plan—maximum throughput for Claude apps and harnesses.
 
@@ -104,6 +109,7 @@ subs:
     name: Cursor Ultra
     logoId: cursor-ultra
     tags: [premium, teams]
+    recommended: true
     description: |
       Top Cursor tier—priority access and higher limits for teams living in the editor.
 

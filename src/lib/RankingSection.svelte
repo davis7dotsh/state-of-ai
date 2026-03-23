@@ -25,16 +25,21 @@
 	<h2 class="mb-6 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase">
 		{title}
 	</h2>
-	<ul class="divide-y divide-neutral-800/80">
+	<ul class="space-y-1">
 		{#each entries as item, index (item.id)}
-			<li class="flex items-start gap-4 py-5 first:pt-0">
+			<li class="flex items-start gap-4 px-3 py-4">
 				<span
 					class="w-5 shrink-0 pt-3 text-right font-mono text-xs text-neutral-500 tabular-nums"
 					aria-label={`Rank ${index + 1}`}
 				>
 					{index + 1}
 				</span>
-				<Logo logoId={item.logoId} />
+				<Logo
+					logoId={item.logoId}
+					class={item.recommended
+						? 'border-emerald-500/30 shadow-[0_0_16px_2px_rgba(52,211,153,0.25)]'
+						: ''}
+				/>
 				<div class="min-w-0 flex-1">
 					<div>
 						<h3 class="text-base font-medium tracking-tight text-neutral-100">

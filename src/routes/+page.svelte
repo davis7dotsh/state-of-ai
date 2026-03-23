@@ -19,18 +19,22 @@
 </svelte:head>
 
 <div class="px-3 pb-16">
-	<header class="border-b border-neutral-800 pb-10">
-		<p class="text-xs font-semibold tracking-[0.22em] text-neutral-500 uppercase">
-			{data.index.title}
-		</p>
-		<h1 class="mt-3 text-3xl font-bold tracking-tight text-neutral-100 sm:text-4xl">
-			{data.snapshot.label}
+	<header class="pb-6">
+		<h1 class="text-3xl font-bold tracking-tight text-neutral-100 sm:text-4xl">
+			{asOfLabel()}
 		</h1>
-		<p class="mt-3 text-sm text-neutral-400">
-			{data.snapshot.subtitle} · <time datetime={data.snapshot.asOf}>{asOfLabel()}</time>
+		<p class="mt-3 text-sm text-neutral-400 italic">
+			according to <a
+				href="https://x.com/davis7"
+				class="text-neutral-200 underline decoration-neutral-600 underline-offset-2 transition-colors hover:decoration-neutral-400"
+				target="_blank">Ben Davis</a
+			>
 		</p>
-		<p class="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-400">
-			{data.snapshot.summary}
+		<p class="mt-3 max-w-2xl text-xs leading-relaxed text-neutral-500">
+			<strong class="font-semibold text-neutral-400">DISCLAIMER:</strong> this is all just my opinion,
+			based on my experiences and what i've used. it is impossible to try everything at the level of depth
+			i would like to, so i've decided to simply focus this site on the tools that i am using the most
+			everyday
 		</p>
 
 		{#if data.index.snapshots.length > 1}
@@ -50,7 +54,7 @@
 		{/if}
 	</header>
 
-	<main class="space-y-16 pt-14">
+	<main class="space-y-16 pt-8">
 		<RankingSection title="Models" entries={data.snapshot.models} />
 		<RankingSection title="Harnesses" entries={data.snapshot.harnesses} />
 		<RankingSection title="Subscriptions" entries={data.snapshot.subs} />
