@@ -1,0 +1,129 @@
+id: march_2026
+label: March 2026
+asOf: '2026-03-23'
+subtitle: Editorial ranking snapshot
+summary: >
+  A ranked snapshot of the best AI models, coding harnesses, and subscriptions
+  for this period. Each section is ordered by placement.
+
+models:
+  - id: gpt-5-4
+    name: GPT 5.4
+    logoId: gpt-5-4
+    tags: [reasoning, flagship]
+    description: |
+      Top-tier general reasoning and long-context work; the default when quality matters more than cost.
+
+  - id: opus-4-6
+    name: Opus 4.6
+    logoId: opus-4-6
+    tags: [analysis, flagship]
+    description: |
+      Anthropic's heaviest model for deep analysis, careful drafting, and nuanced instruction following.
+
+  - id: gemini-3-1-pro
+    name: Gemini 3.1 Pro
+    logoId: gemini-3-1-pro
+    tags: [multimodal, research]
+    description: |
+      Google's flagship multimodal line—solid for research, tools, and mixed media workflows.
+
+  - id: sonnet-4-6
+    name: Sonnet 4.6
+    logoId: sonnet-4-6
+    tags: [balanced, coding]
+    description: |
+      Balanced speed and capability—strong for coding and writing with a lighter footprint than Opus.
+
+  - id: gpt-5-4-mini
+    name: GPT 5.4 Mini
+    logoId: gpt-5-4-mini
+    tags: [fast, budget]
+    description: |
+      Fast, efficient variant for everyday tasks and high-volume use without the full flagship price.
+
+  - id: composer-2
+    name: Composer 2.0
+    logoId: composer-2
+    tags: [agentic, coding]
+    description: |
+      Composer's latest model tuned for agentic coding and tight editor integration.
+
+harnesses:
+  - id: cursor
+    name: Cursor
+    logoId: cursor
+    tags: [editor, coding]
+    description: |
+      Editor-native AI with multi-file edits, strong model choice, and a polished daily-dev experience.
+
+  - id: claude-code
+    name: Claude Code
+    logoId: claude-code
+    tags: [agentic, refactoring]
+    description: |
+      Anthropic's agentic coding tool with deep context and careful refactors in large codebases.
+
+  - id: codex
+    name: Codex
+    logoId: codex
+    tags: [terminal, agentic]
+    description: |
+      OpenAI's coding harness—strong terminal and repo-aware flows for shipping changes quickly.
+
+  - id: opencode
+    name: Opencode
+    logoId: opencode
+    tags: [lightweight, minimal]
+    description: |
+      Lightweight harness for code-focused workflows where you want control and minimal surface area.
+
+  - id: t3-code
+    name: T3 Code
+    logoId: t3-code
+    tags: [typescript, opinionated]
+    description: |
+      Opinionated stack-aware assistant for TypeScript and full-stack T3-style projects.
+
+  - id: pi
+    name: Pi
+    logoId: pi
+    tags: [conversational, planning]
+    description: |
+      Conversational assistant with a calmer UX—useful for exploration and planning more than heavy IDE work.
+
+subs:
+  - id: claude-max
+    name: Claude Max
+    logoId: claude-max
+    tags: [premium, throughput]
+    description: |
+      Anthropic's highest consumer plan—maximum throughput for Claude apps and harnesses.
+
+  - id: cursor-ultra
+    name: Cursor Ultra
+    logoId: cursor-ultra
+    tags: [premium, teams]
+    description: |
+      Top Cursor tier—priority access and higher limits for teams living in the editor.
+
+  - id: codex-200
+    name: Codex $200
+    logoId: codex-200
+    tags: [premium, coding]
+    description: |
+      Premium Codex subscription tier for heavy usage and advanced coding features.
+
+  - id: gemini-sub-antigravity
+    name: Gemini Sub (Antigravity)
+    logoId: gemini-sub-antigravity
+    tags: [multimodal, tooling]
+    description: |
+      Google Gemini subscription path including Antigravity-style tooling for advanced workflows.
+
+  - id: opencode-black
+    name: Opencode Black
+    logoId: opencode-black
+    tags: [premium, lightweight]
+    description: |
+      Opencode's premium line with expanded limits and priority for power users.
