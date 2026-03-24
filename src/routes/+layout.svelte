@@ -1,11 +1,10 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head><link rel="icon" href="/favicon.png" /></svelte:head>
 
 <div class="relative min-h-screen w-full bg-neutral-950 text-neutral-50">
 	<div

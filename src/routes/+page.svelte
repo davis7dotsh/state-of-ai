@@ -3,7 +3,7 @@
 
 	let { data } = $props();
 
-	const asOfLabel = $derived(() => {
+	const asOfLabel = $derived.by(() => {
 		const [year, month, day] = data.snapshot.asOf.split('-').map(Number);
 		return new Date(year, month - 1, day).toLocaleDateString('en-US', {
 			year: 'numeric',
@@ -21,7 +21,7 @@
 <div class="px-3 pb-16">
 	<header class="pb-6">
 		<h1 class="text-3xl font-bold tracking-tight text-neutral-100 sm:text-4xl">
-			{asOfLabel()}
+			{asOfLabel}
 		</h1>
 		<p class="mt-3 text-sm text-neutral-400 italic">
 			according to <a
@@ -61,6 +61,6 @@
 	</main>
 
 	<footer class="mt-20 border-t border-neutral-800 pt-8 text-xs text-neutral-500">
-		<p>Scores are editorial snapshots for this period, not live rankings.</p>
+		<p>Snapshot for this period, not a live ranking.</p>
 	</footer>
 </div>

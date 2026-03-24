@@ -4,6 +4,7 @@ export type RatingEntry = {
 	description: string;
 	logoId: string;
 	tags?: string[];
+	tagline?: string;
 	recommended?: boolean;
 };
 

@@ -41,10 +41,13 @@
 						: ''}
 				/>
 				<div class="min-w-0 flex-1">
-					<div>
+					<div class="flex items-baseline gap-2">
 						<h3 class="text-base font-medium tracking-tight text-neutral-100">
 							{item.name}
 						</h3>
+						{#if item.tagline}
+							<span class="text-sm text-neutral-500 italic">{item.tagline}</span>
+						{/if}
 					</div>
 					{#if item.tags?.length}
 						<div class="mt-1.5 flex flex-wrap gap-1.5">
