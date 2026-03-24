@@ -4,7 +4,10 @@
 	let { children } = $props();
 </script>
 
-<svelte:head><link rel="icon" href="/favicon.png" /></svelte:head>
+<svelte:head
+	><link rel="icon" href="/favicon.png" />
+	<title>State of AI</title>
+</svelte:head>
 
 <div class="relative min-h-screen w-full bg-neutral-950 text-neutral-50">
 	<div

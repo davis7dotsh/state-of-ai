@@ -1,13 +1,20 @@
 import { error } from '@sveltejs/kit';
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { parse } from 'yaml';
 import type { RatingsIndex, RatingsSnapshot } from '$lib/ratings';
 
-const dataDir = resolve('src/data');
+const yamlFiles = import.meta.glob('../data/*.yaml', {
+	eager: true,
+	import: 'default',
+	query: '?raw'
+}) as Record<string, string>;
 
 function loadYaml<T>(filename: string): T {
-	const raw = readFileSync(resolve(dataDir, filename), 'utf-8');
+	const raw = yamlFiles[`../data/${filename}`];
+
+	if (!raw) {
+		throw error(500, `Missing bundled data file: ${filename}`);
+	}
+
 	return parse(raw) as T;
 }
 
