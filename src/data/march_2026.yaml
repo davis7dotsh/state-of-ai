@@ -10,126 +10,137 @@ models:
   - id: gpt-5-4
     name: GPT 5.4
     logoId: gpt-5-4
-    tags: [reasoning, flagship]
+    tags: [default, coding, computer use]
     recommended: true
     description: |
-      Top-tier general reasoning and long-context work; the default when quality matters more than cost.
+      my main model right now. best one for coding, computer use, and random tasks. speed is good, intelligence/tool calling is the best of the best. only real downside is it's awful at ui stuff.
 
   - id: opus-4-6
     name: Opus 4.6
     logoId: opus-4-6
-    tags: [analysis, flagship]
+    tags: [ui, design, coding]
     recommended: true
     description: |
-      Anthropic's heaviest model for deep analysis, careful drafting, and nuanced instruction following.
-
-  - id: gemini-3-1-pro
-    name: Gemini 3.1 Pro
-    logoId: gemini-3-1-pro
-    tags: [multimodal, research]
-    description: |
-      Google's flagship multimodal line—solid for research, tools, and mixed media workflows.
-
-  - id: sonnet-4-6
-    name: Sonnet 4.6
-    logoId: sonnet-4-6
-    tags: [balanced, coding]
-    description: |
-      Balanced speed and capability—strong for coding and writing with a lighter footprint than Opus.
+      i use this whenever i need to do basically any frontend work. it's really fast and feels great. just isn't nearly as smart at 5.4 and makes a lot of subtle mistakes
 
   - id: gpt-5-4-mini
     name: GPT 5.4 Mini
     logoId: gpt-5-4-mini
-    tags: [fast, budget]
+    tags: [search, subagents, computer use]
+    recommended: true
     description: |
-      Fast, efficient variant for everyday tasks and high-volume use without the full flagship price.
+      a very good model for more things then you would expect. incredible at tool calling and actually really smart. perfect for searching, using a computer, sub agent delegations, etc.
+
+  - id: gemini-3-1-pro
+    name: Gemini 3.1 Pro
+    logoId: gemini-3-1-pro
+    tags: [intelligent, google model]
+    description: |
+      do you want to process a video, image, or turn a giant blob of text into json? this is the model (or flash) for it. it's also pretty good at UI.
 
   - id: composer-2
     name: Composer 2.0
     logoId: composer-2
-    tags: [agentic, coding]
+    tags: [coding]
     description: |
-      Composer's latest model tuned for agentic coding and tight editor integration.
+      stupid fast and quite good. not my first choice for most things, but when i need to make a quick change it does the job. it's also way better at frontend then u would think
 
 harnesses:
-  - id: cursor
-    name: Cursor
-    logoId: cursor
-    tags: [editor, coding]
-    recommended: true
-    description: |
-      Editor-native AI with multi-file edits, strong model choice, and a polished daily-dev experience.
-
-  - id: claude-code
-    name: Claude Code
-    logoId: claude-code
-    tags: [agentic, refactoring]
-    recommended: true
-    description: |
-      Anthropic's agentic coding tool with deep context and careful refactors in large codebases.
-
-  - id: codex
-    name: Codex
-    logoId: codex
-    tags: [terminal, agentic]
-    description: |
-      OpenAI's coding harness—strong terminal and repo-aware flows for shipping changes quickly.
-
-  - id: opencode
-    name: Opencode
-    logoId: opencode
-    tags: [lightweight, minimal]
-    description: |
-      Lightweight harness for code-focused workflows where you want control and minimal surface area.
-
   - id: t3-code
     name: T3 Code
     logoId: t3-code
-    tags: [typescript, opinionated]
+    tags: [desktop app]
+    recommended: true
     description: |
-      Opinionated stack-aware assistant for TypeScript and full-stack T3-style projects.
+      yes i'm biased, but t3 code is really good. 90% of my work is done from here, with the only real exception being frontend stuff (typically done in cursor, opencode, or pi)
+
+  - id: cursor
+    name: Cursor
+    logoId: cursor
+    tags: [editor, cloud agent, desktop app, cli]
+    recommended: true
+    description: |
+      still the only ai coding editor i use. and their cloud agents are actually really good. only one's i would ever use
 
   - id: pi
     name: Pi
     logoId: pi
-    tags: [conversational, planning]
-    description: |
-      Conversational assistant with a calmer UX—useful for exploration and planning more than heavy IDE work.
-
-subs:
-  - id: claude-max
-    name: Claude Max
-    logoId: claude-max
-    tags: [premium, throughput]
+    tags: [cli, sdk]
     recommended: true
     description: |
-      Anthropic's highest consumer plan—maximum throughput for Claude apps and harnesses.
+      the cli app is a cli app. u've seen them before, it's fast, works well, idk what else to really say.
 
+      the most impressive thing here is the sdk. easily the best "ai sdk" i've used for building agents
+
+  - id: opencode
+    name: Opencode
+    logoId: opencode
+    tags: [cli, desktop app, sdk]
+    description: |
+      easily the most impressive tui. generally find myself using it for:
+
+      - claude models or open source models
+      - random one off changes on my machine
+
+      not my main cli, but still worth having around
+
+  - id: codex
+    name: Codex
+    logoId: codex
+    tags: [cli, desktop app, cloud agent, sdk]
+    description: |
+      the desktop app is beautiful, but the performance is rough. the cli's one of the best and i really haven't used the cloud agent much.
+
+  - id: claude-code
+    name: Claude Code
+    logoId: claude-code
+    tags: [cli, sdk]
+    description: |
+      lol no
+
+subs:
   - id: cursor-ultra
     name: Cursor Ultra
     logoId: cursor-ultra
-    tags: [premium, teams]
+    tags: [$200, every model]
     recommended: true
     description: |
-      Top Cursor tier—priority access and higher limits for teams living in the editor.
+      your $200 will get you ~$400-$500 a month in inference. not nearly as insane of a subsidy as the major labs, but still worth having in my opinion. this one really shines in the harnesses & model variety you get:
+      - best cloud agents
+      - best code editor
+      - decent cli
+      if you have to pick only one sub, this is the one to get.
 
   - id: codex-200
-    name: Codex $200
+    name: OpenAI Codex
     logoId: codex-200
-    tags: [premium, coding]
+    tags: [$200, gpt only]
+    recommended: true
     description: |
-      Premium Codex subscription tier for heavy usage and advanced coding features.
+      insane value, your $200 will get you thousands of dollars worth of gpt a month if you push it.
 
-  - id: gemini-sub-antigravity
-    name: Gemini Sub (Antigravity)
-    logoId: gemini-sub-antigravity
-    tags: [multimodal, tooling]
-    description: |
-      Google Gemini subscription path including Antigravity-style tooling for advanced workflows.
+      if you can afford two subs, this is the other one to get. gpt models are overall the best right now, and openai is super chill about letting you use the sub in other harnesses:
+
+      - codex
+      - t3 code
+      - opencode
+      - pi
 
   - id: opencode-black
-    name: Opencode Black
+    name: OpenCode Black
     logoId: opencode-black
-    tags: [premium, lightweight]
+    tags: [$200, every model]
+    recommended: true
     description: |
-      Opencode's premium line with expanded limits and priority for power users.
+      this is the third sub i'd get if you can spend the money. not as insane of a value as the other subs, but it seems like you can pretty easily get close to $1000 if you push it (although that could change).
+
+      best part of this one is how flexible opencode zen is. it's truly just an api, your sub gets you an api key. which means it's trivial to use as the inference for agents your building, in other harnesses, etc.
+
+  - id: claude-max
+    name: Claude Max
+    logoId: claude-max
+    tags: [$200, claude only]
+    description: |
+      a pretty insane value for the money if you push it hard. your $200 will get you thousands of dollars a month in inference if you push it.
+
+      the problem is this is the most locked down sub of them all. you can really only use it in claude code which is currently the weakest mainline harness
