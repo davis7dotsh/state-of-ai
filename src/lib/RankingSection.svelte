@@ -27,44 +27,77 @@
 	</h2>
 	<ul class="space-y-1">
 		{#each entries as item, index (item.id)}
-			<li class="flex items-start gap-4 px-3 py-4">
-				<span
-					class="w-5 shrink-0 pt-3 text-right font-mono text-xs text-neutral-500 tabular-nums"
-					aria-label={`Rank ${index + 1}`}
-				>
-					{index + 1}
-				</span>
-				<Logo
-					logoId={item.logoId}
-					class={item.recommended
-						? 'border-emerald-500/30 shadow-[0_0_16px_2px_rgba(52,211,153,0.25)]'
-						: ''}
-				/>
-				<div class="min-w-0 flex-1">
-					<h3 class="text-base font-medium tracking-tight text-neutral-100">
-						<a
-							href={item.url}
-							target="_blank"
-							rel="noopener noreferrer external"
-							class="text-inherit no-underline decoration-neutral-500/60 underline-offset-[5px] transition-[text-decoration-color] hover:underline"
-						>
-							{item.name}
-						</a>
-					</h3>
-					{#if item.tags?.length}
-						<div class="mt-1.5 flex flex-wrap gap-1.5">
-							{#each item.tags as tag (tag)}
-								<span
-									class="rounded-full border px-2 py-0.5 font-mono text-[10px] leading-tight {getTagClasses(
-										tag
-									)}"
-								>
-									{tag}
-								</span>
-							{/each}
-						</div>
-					{/if}
-					<div class="rating-prose mt-1.5 max-w-prose text-sm leading-relaxed text-neutral-400">
+			<li class="px-3 py-4 sm:flex sm:flex-nowrap sm:items-start sm:gap-4">
+				<!-- Mobile: rank + logo + title/tags in a row; Desktop: rank + logo column -->
+				<div class="flex shrink-0 items-center gap-3 sm:items-start sm:gap-4">
+					<span
+						class="w-5 shrink-0 pt-0 text-right font-mono text-xs text-neutral-500 tabular-nums sm:pt-3"
+						aria-label={`Rank ${index + 1}`}
+					>
+						{index + 1}
+					</span>
+					<Logo
+						logoId={item.logoId}
+						class={item.recommended
+							? 'border-emerald-500/30 shadow-[0_0_16px_2px_rgba(52,211,153,0.25)]'
+							: ''}
+					/>
+					<!-- Mobile-only: title + tags next to logo -->
+					<div class="min-w-0 sm:hidden">
+						<h3 class="text-base font-medium tracking-tight text-neutral-100">
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noopener noreferrer external"
+								class="text-inherit no-underline decoration-neutral-500/60 underline-offset-[5px] transition-[text-decoration-color] hover:underline"
+							>
+								{item.name}
+							</a>
+						</h3>
+						{#if item.tags?.length}
+							<div class="mt-1.5 flex flex-wrap gap-1.5">
+								{#each item.tags as tag (tag)}
+									<span
+										class="rounded-full border px-2 py-0.5 font-mono text-[10px] leading-tight {getTagClasses(
+											tag
+										)}"
+									>
+										{tag}
+									</span>
+								{/each}
+							</div>
+						{/if}
+					</div>
+				</div>
+				<!-- Mobile: description + pros/cons full width below; Desktop: everything -->
+				<div class="mt-3 min-w-0 sm:mt-0 sm:flex-1">
+					<!-- Desktop-only: title + tags -->
+					<div class="hidden sm:block">
+						<h3 class="text-base font-medium tracking-tight text-neutral-100">
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noopener noreferrer external"
+								class="text-inherit no-underline decoration-neutral-500/60 underline-offset-[5px] transition-[text-decoration-color] hover:underline"
+							>
+								{item.name}
+							</a>
+						</h3>
+						{#if item.tags?.length}
+							<div class="mt-1.5 flex flex-wrap gap-1.5">
+								{#each item.tags as tag (tag)}
+									<span
+										class="rounded-full border px-2 py-0.5 font-mono text-[10px] leading-tight {getTagClasses(
+											tag
+										)}"
+									>
+										{tag}
+									</span>
+								{/each}
+							</div>
+						{/if}
+					</div>
+					<div class="rating-prose mt-1.5 max-w-prose text-sm leading-relaxed text-neutral-400 sm:mt-1.5">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -- trusted: server-loaded YAML -->
 						{@html renderMarkdown(item.description)}
 					</div>
