@@ -117,7 +117,8 @@
 		{/each}
 
 		<footer class="v2-footer">
-			Snapshot for this period, not a live ranking.
+			<p>Snapshot for this period, not a live ranking.</p>
+			<a href="https://github.com/davis7dotsh/state-of-ai" target="_blank" rel="noopener noreferrer" class="v2-footer-link">GitHub</a>
 		</footer>
 	</div>
 </div>
@@ -366,6 +367,18 @@
 		color: #666;
 		text-align: center;
 		letter-spacing: 0.08em;
+	}
+	.v2-footer-link {
+		color: #666;
+		text-decoration: none;
+		border-bottom: 1px solid #333;
+		transition: border-color 0.2s, color 0.2s;
+		margin-top: 0.4rem;
+		display: inline-block;
+	}
+	.v2-footer-link:hover {
+		color: #aaa;
+		border-color: #666;
 	}
 
 	/* mobile */
