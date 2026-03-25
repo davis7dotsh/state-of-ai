@@ -16,7 +16,7 @@ models:
     description: |
       My default model for coding.
     pros:
-      - Incredible instruction calling
+      - Incredible instruction following
       - Recent training data
       - Tool calling and running for a long time in a loop
       - Coding
