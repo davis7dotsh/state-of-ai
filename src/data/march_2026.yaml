@@ -9,6 +9,7 @@ summary: >
 models:
   - id: gpt-5-4
     name: GPT 5.4
+    url: https://openai.com/index/introducing-gpt-5-4/
     logoId: gpt-5-4
     tags: [default, coding, computer use]
     recommended: true
@@ -25,6 +26,7 @@ models:
 
   - id: opus-4-6
     name: Opus 4.6
+    url: https://www.anthropic.com/claude/opus
     logoId: opus-4-6
     tags: [ui, design, coding]
     recommended: true
@@ -41,6 +43,7 @@ models:
 
   - id: gpt-5-4-mini
     name: GPT 5.4 Mini
+    url: https://platform.openai.com/docs/models/gpt-5.4-mini
     logoId: gpt-5-4-mini
     tags: [search, subagents, computer use]
     recommended: true
@@ -55,6 +58,7 @@ models:
 
   - id: gemini-3-1-pro
     name: Gemini 3.1 Pro (and flash kinda)
+    url: https://deepmind.google/models/gemini/pro
     logoId: gemini-3-1-pro
     tags: [intelligent, google model]
     description: |
@@ -68,6 +72,7 @@ models:
 
   - id: composer-2
     name: Composer 2.0
+    url: https://cursor.com/docs/models/cursor-composer-2
     logoId: composer-2
     tags: [coding]
     description: |
@@ -84,6 +89,7 @@ models:
 harnesses:
   - id: t3-code
     name: T3 Code
+    url: https://t3.codes/
     logoId: t3-code
     tags: [desktop app]
     recommended: true
@@ -98,6 +104,7 @@ harnesses:
 
   - id: cursor
     name: Cursor
+    url: https://cursor.com
     logoId: cursor
     tags: [editor, cloud agent, desktop app, cli]
     recommended: true
@@ -114,6 +121,7 @@ harnesses:
 
   - id: pi
     name: Pi
+    url: https://github.com/badlogic/pi-mono
     logoId: pi
     tags: [cli, sdk]
     recommended: true
@@ -130,6 +138,7 @@ harnesses:
 
   - id: opencode
     name: Opencode
+    url: https://opencode.ai
     logoId: opencode
     tags: [cli, desktop app, sdk]
     description: |
@@ -144,6 +153,7 @@ harnesses:
 
   - id: codex
     name: Codex
+    url: https://openai.com/codex
     logoId: codex
     tags: [cli, desktop app, cloud agent, sdk]
     description: |
@@ -157,6 +167,7 @@ harnesses:
 
   - id: claude-code
     name: Claude Code
+    url: https://docs.anthropic.com/en/docs/claude-code/overview
     logoId: claude-code
     tags: [cli, sdk]
     description: |
@@ -167,6 +178,7 @@ harnesses:
 subs:
   - id: cursor-ultra
     name: Cursor Ultra
+    url: https://cursor.com/pricing
     logoId: cursor-ultra
     tags: [$200, every model]
     recommended: true
@@ -182,6 +194,7 @@ subs:
 
   - id: codex-200
     name: OpenAI Codex
+    url: https://openai.com/codex
     logoId: codex-200
     tags: [$200, gpt only]
     recommended: true
@@ -202,6 +215,7 @@ subs:
 
   - id: opencode-black
     name: OpenCode Black
+    url: https://opencode.ai/black
     logoId: opencode-black
     tags: [$200, every model]
     recommended: true
@@ -217,6 +231,7 @@ subs:
 
   - id: claude-max
     name: Claude Max
+    url: https://www.anthropic.com/pricing
     logoId: claude-max
     tags: [$200, claude only]
     description: |

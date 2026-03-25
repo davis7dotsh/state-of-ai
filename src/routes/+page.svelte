@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import RankingSection from '$lib/RankingSection.svelte';
 
 	let { data } = $props();
@@ -41,7 +42,9 @@
 			<nav class="mt-6 flex flex-wrap gap-2" aria-label="Snapshots">
 				{#each data.index.snapshots as s (s.id)}
 					<a
-						href={s.id === data.index.defaultSnapshot ? '/' : `/?snapshot=${s.id}`}
+						href={resolve(
+							s.id === data.index.defaultSnapshot ? '/' : `/?snapshot=${encodeURIComponent(s.id)}`
+						)}
 						class="rounded-md border px-3 py-1.5 text-xs font-medium transition-colors {s.id ===
 						data.activeSnapshotId
 							? 'border-neutral-100 bg-neutral-100 text-neutral-900'

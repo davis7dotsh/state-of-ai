@@ -1,6 +1,7 @@
 export type RatingEntry = {
 	id: string;
 	name: string;
+	url: string;
 	description: string;
 	logoId: string;
 	tags?: string[];

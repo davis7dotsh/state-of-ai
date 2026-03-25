@@ -42,7 +42,14 @@
 				/>
 				<div class="min-w-0 flex-1">
 					<h3 class="text-base font-medium tracking-tight text-neutral-100">
-						{item.name}
+						<a
+							href={item.url}
+							target="_blank"
+							rel="noopener noreferrer external"
+							class="text-inherit no-underline decoration-neutral-500/60 underline-offset-[5px] transition-[text-decoration-color] hover:underline"
+						>
+							{item.name}
+						</a>
 					</h3>
 					{#if item.tags?.length}
 						<div class="mt-1.5 flex flex-wrap gap-1.5">
@@ -58,6 +65,7 @@
 						</div>
 					{/if}
 					<div class="rating-prose mt-1.5 max-w-prose text-sm leading-relaxed text-neutral-400">
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -- trusted: server-loaded YAML -->
 						{@html renderMarkdown(item.description)}
 					</div>
 					{#if item.pros?.length || item.cons?.length}
