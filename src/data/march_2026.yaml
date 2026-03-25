@@ -11,123 +11,179 @@ models:
     name: GPT 5.4
     logoId: gpt-5-4
     tags: [default, coding, computer use]
-    tagline: Current Best Model
     recommended: true
     description: |
-      My main model right now. Best one for coding, computer use, and random tasks. Speed is good, intelligence/tool calling is the best of the best. Only real downside is it's awful at UI stuff.
+      My default model for coding.
+    pros:
+      - Incredible instruction calling
+      - Recent training data
+      - Tool calling and running for a long time in a loop
+      - Coding
+      - Computer & Browser Use
+    cons:
+      - Awful at UI
 
   - id: opus-4-6
     name: Opus 4.6
     logoId: opus-4-6
     tags: [ui, design, coding]
-    tagline: Best for Frontend
     recommended: true
     description: |
-      I use this whenever I need to do basically any frontend work. It's really fast and feels great. Just isn't nearly as smart as 5.4 and makes a lot of subtle mistakes
+      The model I use for making UIs and doing frontend work
+    pros:
+      - Great at tool calling
+      - Feels really fast (prone to action)
+      - Pleasant to talk to
+      - Excellent at UI and frontend
+    cons:
+      - Lacks the "wisdom" of 5.4, resulting in much worse code over time
+      - Expensive
 
   - id: gpt-5-4-mini
     name: GPT 5.4 Mini
     logoId: gpt-5-4-mini
     tags: [search, subagents, computer use]
-    tagline: Surprisingly Capable
     recommended: true
     description: |
-      A very good model for more things then you would expect. Incredible at tool calling and actually really smart. Perfect for searching, using a computer, sub agent delegations, etc.
+      A sleeper pick. The speed is absurd, incredible for "sub agent" type tasks (search with tools)
+    pros:
+      - Excellent tool calling
+      - Very very fast
+      - Very cheap
+    cons:
+      - Lacks the overall intelligence of 5.4
 
   - id: gemini-3-1-pro
-    name: Gemini 3.1 Pro
+    name: Gemini 3.1 Pro (and flash kinda)
     logoId: gemini-3-1-pro
     tags: [intelligent, google model]
-    tagline: Images, Videos, and Text Parsing
     description: |
       Do you want to process a video, image, or turn a giant blob of text into JSON? This is the model (or flash) for it. It's also pretty good at UI.
+    pros:
+      - Probably the best multi-modal model right now (video, image, etc.)
+      - Turning messy input into structured JSON
+      - Pretty good at UI
+    cons:
+      - Awful at tool calling and working in an agent harness
 
   - id: composer-2
     name: Composer 2.0
     logoId: composer-2
     tags: [coding]
-    tagline: The Really Fast One
     description: |
-      Stupid fast and quite good. Not my first choice for most things, but when I need to make a quick change it does the job. It's also way better at frontend then u would think
+      Another sleeper pick I didn't think I would use as much as I do. Anytime I need a quick change/search it's perfect. Also surprisingly good at UI stuff.
+    pros:
+      - Stupid fast
+      - Cheap
+      - Great at tool calling
+      - Pretty smart and capable
+    cons:
+      - Can only be used in Cursor harnesses
+      - Not as powerful as the frontier from OpenAI and Anthropic
 
 harnesses:
   - id: t3-code
     name: T3 Code
     logoId: t3-code
     tags: [desktop app]
-    tagline: My Current Main
     recommended: true
     description: |
       Yes I'm biased, but T3 Code is really good. 90% of my work is done from here, with the only real exception being frontend stuff (typically done in Cursor, Opencode, or Pi)
+    pros:
+      - Very very fast
+      - Doesn't lag and overheat my computer
+      - Wraps codex and other existing harnesses so it's A) free and B) giving u the best experience for the models
+    cons:
+      - Currently only support codex and claude code, thus limited model selection
 
   - id: cursor
     name: Cursor
     logoId: cursor
     tags: [editor, cloud agent, desktop app, cli]
-    tagline: Cloud Agents + Text Editor
     recommended: true
     description: |
-      Still the only AI coding editor I use. And their cloud agents are actually really good. Only one's I would ever use
+      Still my default editor.
+    pros:
+      - Editor is vscode based, it's what u expect it works
+      - They have the only good cloud agents I've tried
+      - Every model is usable
+    cons:
+      - General stability of the product/platform is rough...
+      - Have to use a cursor sub for the inference
+      - Glass the new desktop ui is very early and has a ton of issues
 
   - id: pi
     name: Pi
     logoId: pi
     tags: [cli, sdk]
-    tagline: Best SDK
     recommended: true
     description: |
-      The CLI app is a CLI app. U've seen them before, it's fast, works well, idk what else to really say.
+      The tui is a tui. Idk what else to say but: it's good. 
 
-      The most impressive thing here is the SDK. Easily the best "AI SDK" I've used for building agents
+      The really impressive part is the SDK. Best "agent" SDK I've tried by a lot.
+    pros:
+      - Fast and minimal tui
+      - Incredible SDK
+      - Can use any model*
+    cons:
+      - Auth is a little weird with the tui
 
   - id: opencode
     name: Opencode
     logoId: opencode
     tags: [cli, desktop app, sdk]
-    tagline: Best TUI
     description: |
-      Easily the most impressive TUI. Generally find myself using it for:
-
-      - Claude models or open source models
-      - Random one off changes on my machine
-
-      Not my main CLI, but still worth having around
+      Still the most impressive overall tui and their desktop app has come a lot way to actually being quite solid. I just kinda like having it around for random tasks.
+    pros:
+      - Looks and feels great to use
+      - Solid desktop app
+      - Excellent client/server architecture making it super extensible
+    cons:
+      - SDK is pretty bad compared to pi. It just does too much
+      - TUI isn't a normal TUI, it fully takes over the terminal view which is great most of the time, but can cause weird issues
 
   - id: codex
     name: Codex
     logoId: codex
     tags: [cli, desktop app, cloud agent, sdk]
-    tagline: Best Harness, Not the Best UI
     description: |
-      The desktop app is beautiful, but the performance is rough. The CLI's one of the best and I really haven't used the cloud agent much.
+      The best harness for OpenAI models. CLI is great. Desktop app is beautiful, but has a ton of perf issues. I mostly just use it under the hood through T3 Code.
+    pros:
+      - Desktop app looks beautiful
+      - CLI is minimal and performant
+      - Excellent harness for the current best models
+    cons:
+      - Desktop performance is rough
 
   - id: claude-code
     name: Claude Code
     logoId: claude-code
     tags: [cli, sdk]
-    tagline: No
     description: |
-      Lol no
+      It's in a rough state
+    cons:
+      - Not something I reach for
 
 subs:
   - id: cursor-ultra
     name: Cursor Ultra
     logoId: cursor-ultra
     tags: [$200, every model]
-    tagline: If You Can Only Get One
     recommended: true
     description: |
-      Your $200 will get you ~$400-$500 a month in inference. Not nearly as insane of a subsidy as the major labs, but still worth having in my opinion. This one really shines in the harnesses & model variety you get:
-      - Best cloud agents
-      - Best code editor
-      - Decent CLI
+      Your $200 will get you ~$400-$500 a month in inference. Not nearly as insane of a subsidy as the major labs, but still worth having in my opinion. 
+
       If you have to pick only one sub, this is the one to get.
+    pros:
+      - You get a solid editor, the only good cloud agents, and a fine cli.
+      - Model variety
+    cons:
+      - Inference subsidy isn't as crazy as the big labs'
 
   - id: codex-200
     name: OpenAI Codex
     logoId: codex-200
     tags: [$200, gpt only]
-    tagline: Best Value
     recommended: true
     description: |
       Insane value, your $200 will get you thousands of dollars worth of GPT a month if you push it.
@@ -138,24 +194,36 @@ subs:
       - T3 Code
       - Opencode
       - Pi
+    pros:
+      - Insane value for the money
+      - Harness flexibility
+    cons:
+      - GPT models only
 
   - id: opencode-black
     name: OpenCode Black
     logoId: opencode-black
     tags: [$200, every model]
-    tagline: Most Flexible
     recommended: true
     description: |
       This is the third sub I'd get if you can spend the money. Not as insane of a value as the other subs, but it seems like you can pretty easily get close to $1000 if you push it (although that could change).
 
       Best part of this one is how flexible Opencode Zen is. It's truly just an API, your sub gets you an API key. Which means it's trivial to use as the inference for agents your building, in other harnesses, etc.
+    pros:
+      - Opencode Zen is basically an API so you can use it anywhere
+    cons:
+      - Not as absurd of a value
+      - Heavily wait listed right now, you might not even be able to get it
 
   - id: claude-max
     name: Claude Max
     logoId: claude-max
     tags: [$200, claude only]
-    tagline: Great Value With a Bad Harness
     description: |
       A pretty insane value for the money if you push it hard. Your $200 will get you thousands of dollars a month in inference if you push it.
 
       The problem is this is the most locked down sub of them all. You can really only use it in Claude Code which is currently the weakest mainline harness
+    pros:
+      - Huge inference value if you hammer it
+    cons:
+      - Locked to Claude Code

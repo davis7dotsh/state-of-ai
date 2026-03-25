@@ -4,8 +4,9 @@ export type RatingEntry = {
 	description: string;
 	logoId: string;
 	tags?: string[];
-	tagline?: string;
 	recommended?: boolean;
+	pros?: string[];
+	cons?: string[];
 };
 
 export const tagColors: Record<string, string> = {

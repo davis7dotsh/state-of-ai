@@ -41,17 +41,12 @@
 						: ''}
 				/>
 				<div class="min-w-0 flex-1">
-					<div class="flex items-baseline gap-2">
-						<h3 class="text-base font-medium tracking-tight text-neutral-100">
-							{item.name}
-						</h3>
-						{#if item.tagline}
-							<span class="text-sm text-neutral-500 italic">{item.tagline}</span>
-						{/if}
-					</div>
+					<h3 class="text-base font-medium tracking-tight text-neutral-100">
+						{item.name}
+					</h3>
 					{#if item.tags?.length}
 						<div class="mt-1.5 flex flex-wrap gap-1.5">
-							{#each item.tags as tag}
+							{#each item.tags as tag (tag)}
 								<span
 									class="rounded-full border px-2 py-0.5 font-mono text-[10px] leading-tight {getTagClasses(
 										tag
@@ -65,6 +60,42 @@
 					<div class="rating-prose mt-1.5 max-w-prose text-sm leading-relaxed text-neutral-400">
 						{@html renderMarkdown(item.description)}
 					</div>
+					{#if item.pros?.length || item.cons?.length}
+						<div class="mt-3 max-w-prose space-y-3">
+							{#if item.pros?.length}
+								<div>
+									<h4
+										class="text-[10px] font-semibold tracking-[0.18em] text-neutral-500 uppercase"
+									>
+										Pros
+									</h4>
+									<ul
+										class="mt-1.5 list-disc space-y-0.5 pl-4 text-sm leading-relaxed text-neutral-400"
+									>
+										{#each item.pros as line, i (`${item.id}-pro-${i}`)}
+											<li>{line}</li>
+										{/each}
+									</ul>
+								</div>
+							{/if}
+							{#if item.cons?.length}
+								<div>
+									<h4
+										class="text-[10px] font-semibold tracking-[0.18em] text-neutral-500 uppercase"
+									>
+										Cons
+									</h4>
+									<ul
+										class="mt-1.5 list-disc space-y-0.5 pl-4 text-sm leading-relaxed text-neutral-400"
+									>
+										{#each item.cons as line, i (`${item.id}-con-${i}`)}
+											<li>{line}</li>
+										{/each}
+									</ul>
+								</div>
+							{/if}
+						</div>
+					{/if}
 				</div>
 			</li>
 		{/each}
