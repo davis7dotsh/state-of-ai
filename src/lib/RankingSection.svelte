@@ -25,9 +25,9 @@
 	<h2 class="mb-6 text-xs font-semibold tracking-[0.2em] text-neutral-500 uppercase">
 		{title}
 	</h2>
-	<ul class="space-y-1">
+	<ul class="divide-y divide-neutral-800/50">
 		{#each entries as item, index (item.id)}
-			<li class="px-3 py-4 sm:flex sm:flex-nowrap sm:items-start sm:gap-4">
+			<li class="px-1 py-4 sm:flex sm:flex-nowrap sm:items-start sm:gap-4 sm:px-3">
 				<!-- Mobile: rank + logo + title/tags in a row; Desktop: rank + logo column -->
 				<div class="flex shrink-0 items-center gap-3 sm:items-start sm:gap-4">
 					<span
@@ -70,7 +70,7 @@
 					</div>
 				</div>
 				<!-- Mobile: description + pros/cons full width below; Desktop: everything -->
-				<div class="mt-3 min-w-0 sm:mt-0 sm:flex-1">
+				<div class="mt-2.5 min-w-0 sm:mt-0 sm:flex-1">
 					<!-- Desktop-only: title + tags -->
 					<div class="hidden sm:block">
 						<h3 class="text-base font-medium tracking-tight text-neutral-100">
@@ -97,12 +97,12 @@
 							</div>
 						{/if}
 					</div>
-					<div class="rating-prose mt-1.5 max-w-prose text-sm leading-relaxed text-neutral-400 sm:mt-1.5">
+					<div class="rating-prose max-w-prose text-sm leading-relaxed text-neutral-400 sm:mt-1.5">
 						<!-- eslint-disable-next-line svelte/no-at-html-tags -- trusted: server-loaded YAML -->
 						{@html renderMarkdown(item.description)}
 					</div>
 					{#if item.pros?.length || item.cons?.length}
-						<div class="mt-3 max-w-prose space-y-3">
+						<div class="mt-2.5 max-w-prose space-y-2.5 sm:mt-3 sm:space-y-3">
 							{#if item.pros?.length}
 								<div>
 									<h4
